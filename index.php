@@ -23,12 +23,14 @@ if(isset($_POST["login"])){
 	                $_SESSION['username'] = $_POST['username'];
 	                $_SESSION['UserNo'] = $row['UserNo'];
 	                header('Location:adminAsset.php');
+
 	            }
 	            elseif ($row["accessLevel"] == '2') 
 	            {
 	                $_SESSION['username'] = $_POST['username'];
 	                $_SESSION['UserNo'] = $row['UserNo'];
 	                header('Location:userAsset.php');
+	                
 	            }
 	            
 	        }
@@ -42,7 +44,7 @@ if(isset($_POST["login"])){
 	            <?php
 	            }
   }
-  
+
 ?>	
 </head>
 <body>
@@ -63,6 +65,5 @@ if(isset($_POST["login"])){
 		<input class="btn"  type="reset" name="reset" value="Reset"/>
 	
 	</form>
-
 	</body>
 	</html>
