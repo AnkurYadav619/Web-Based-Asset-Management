@@ -1,76 +1,146 @@
-* { margin: 0px; padding: 0px; box-sizing: border-box; }
-body {
-	font-size: 120%;
-	background: #F8F8FF;
+html,body{
+	color: #330000;
+	background-color: #ffffcc;
+	font-family: verdana;
+	height:100%;
 }
 
 .header {
-	width: 40%;
-	margin: 50px auto 0px;
-	color: white;
-	background: #5F9EA0;
+	width:55%;
+	background-color: #ccaa66;
 	text-align: center;
-	border: 1px solid #B0C4DE;
-	border-bottom: none;
-	border-radius: 10px 10px 0px 0px;
+	border: 2px solid;
 	padding: 20px;
-}
-
-form {
-border : 1px solid #000;
-padding : 5px;
-
+	margin: 50px auto 0px;
 }
 
 .login {
-	width: 40%;
+	width: 55%;
 	margin: 0px auto;
 	padding: 20px;
+	background-color: #f1e8b0;
 	border: 1px solid #B0C4DE;
-	background: white;
-	border-radius: 0px 0px 10px 10px;
-	
 }
 
-.input-group {
-	margin: 10px 0px 10px 0px;
-}
 .input-group label {
-	display: block;
 	text-align: left;
-	margin: 3px;
+	margin: 4px;
 }
+
 .input-group input {
 	height: 30px;
-	width: 93%;
-	padding: 5px 10px;
+	width: 90%;
+	padding: 5px 8px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	margin: 5px;
+}
+
+.btn {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	font-size: 15px;
+	background: #ccaa66;
+	border:1px solid;
+	border-radius: 5px;
+}
+
+.container {
+	margin: auto;
+	width: 100%;
+	height:745px;
+	border: 2px solid;
+}
+
+.adminheader
+{
+	background-color: #ccaa66;
+	text-align: center;
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+	padding: 20px;
+}
+
+nav {
+	float: left;
+	width: 160px;
+	height: 600px;
+	padding: 1em;
+	background-color: #E8D882;
+}
+ a {
+  display: block;
+  font-size: 16px;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+a:hover{
+	background-color:#ccaa66;
+}
+
+button, input[type="button"]{
+	background-color:#E8D882;
+	border: none;
+	display: block;
+	cursor:inherit;
+  	color: #330000;
+  	padding: 8px 16px;
+  	font-size: 16px;
+  	text-align: left;
+  	text-decoration: none;
+}
+button:hover{
+	background-color:#ccaa66;
+}
+
+article	{
+	padding-left: 1em;
+	padding-top: 1em;
+	padding-right: 1em;
+	overflow: hidden;
+	background-color: #f1e8b0;
+}
+
+table {
+  border-collapse: collapse;
+  width:55%;
+  padding: 10px;
+}
+
+th{
+	background-color:#ccaa66;
+	height:50px;
+}
+
+#assetEntryTable input
+{
+	border-collapse: collapse;
+  	height: 30px;
+	width: 90%;
+	padding: 5px 7px;
 	font-size: 16px;
 	border-radius: 5px;
 	border: 1px solid gray;
 }
 
-.btn {
-	padding: 10px;
-	font-size: 15px;
-	color: white;
-	background: #5F9EA0;
-	border: none;
-	border-radius: 5px;
+
+#form2 {
+	display: none;
 }
 
-#adminHeader {
-	width: 95%;
-	margin: 50px auto 0px;
-	color: white;
-	background: #5F9EA0;
-	text-align: center;
-	border: 1px solid #B0C4DE;
-	border-bottom: none;
-	border-radius: 10px 10px 10px 10px;
-	padding: 20px;
+#form3 {
+	display: none;
 }
 
-#userSelector{
-	width:100px;
-	margin:0px auto;
+
+b{
+	font-size: 24px;
+}
+
+#form4{
+	display: none;
 }
