@@ -49,8 +49,8 @@ if(isset($_POST["login"])){
 </head>
 <body>
 	<div class="header">
-	<h2>Log In</h2>
-</div>
+		<h2>Log In</h2>
+	</div>
 	<form class="login" name="myForm" action="index.php" method="post">
 		<br>
 		<div class="input-group">
@@ -63,7 +63,6 @@ if(isset($_POST["login"])){
 		</div>
 		<input class="btn" id="btn1" type="submit" name="login" value="Login">
 		<input class="btn"  type="reset" name="reset" value="Reset"/>
-	
 	</form>
 	</body>
 	</html>
