@@ -7,9 +7,7 @@
 	<link rel="stylesheet" href="style.css">
 	<SCRIPT language="javascript">
 		function addRow(assetEntryTable) {
-
 			var table = document.getElementById("assetEntryTable");
-
 			var rowCount = table.rows.length;
 			var row = table.insertRow(rowCount);
 
@@ -37,22 +35,73 @@
 			element4.name = "make[]";
 			cell4.appendChild(element4);
 		}
+
+		function assetEntry(){
+			var x = document.getElementById("form1");
+			var y = document.getElementById("form2");
+			var z = document.getElementById("form3"); 
+			
+  			if (x.style.display === "none") {
+   				 x.style.display = "block";
+   				 y.style.display = "none";
+   				 z.style.display = "none";
+  			} else {
+   				 x.style.display = "none";
+  			}
+		}
+
+		function assetTransfer(){
+			var x = document.getElementById("form1");
+			var y = document.getElementById("form2");
+			var z = document.getElementById("form3"); 
+			
+  			if (y.style.display === "none") {
+   				 x.style.display = "none";
+   				 y.style.display = "block";
+   				 z.style.display = "none";
+
+  			} else {
+   				 y.style.display = "none";
+  			}
+		}
+
+		function transferRequest(){
+			var x = document.getElementById("form1");
+			var y = document.getElementById("form2");
+			var z = document.getElementById("form3"); 
+			
+  			if (z.style.display === "none") {
+   				 x.style.display = "none";
+   				 y.style.display = "none";
+   				 z.style.display = "block";
+  			} else {
+   				 z.style.display = "none";
+  			}
+		}
 	</script>
 </head>
 <body>
-
-	<div id="adminHeader">
-		<h2 style="margin-left:150px;" >ASSET MANAGER</h2>
-		<a style="text-decoration: none;float:right;margin-left:15px;" href="logout.php">Logout</a>
-		<a style="text-decoration: none;float:right;" href="index.php">Back to Login</a>
-		
+<div class="container">
+	<div class="adminheader">
+		<h2>ASSET MANAGER</h2>
 	</div>
-		
- 	<form id="assetEntry" name="hello" action="adminAsset.php" method="POST" style="margin-left:400px;margin-right: 220px; ">
- 		<div class="input-group">
-			<b  style="margin-left:280px;">Assign Asset</b>
+	<nav>
 			<br>
+			<button id="btn1" type="button" onclick="assetEntry()">Assign Asset</button>
+			<button id="btn2" type="button" onclick="assetTransfer()">Transfer Asset</button>
+			<button id="btn3" type="button" onclick="transferRequest()">Transfer Request</button>
+			<a href="index.php">Back to Login</a>
+			<a href="logout.php">Logout</a>
+			
+	</nav>
+<article>
 
+<div id="form1">		
+ 	<form id="assetEntry" name="assignAsset" action="" method="POST" >
+ 		<div class="input-group">
+			<b>Assign Asset</b>
+			<br>
+			<br>
 			<label >Select User</label>
 			<select name="userNum" id="userSelector1" required>
 				<option value="">--Select--</option>
@@ -70,8 +119,8 @@
 
 			
 		</div>
-		<input class="btn" id="btn4" type="submit" name="addInput" value="Submit" style="width:80px;margin-top:5px;"/>
-		<table id="assetEntryTable" name="assetEntry" border="1" form="hello" style="width:715px;">
+		<input class="btn" id="btn4" type="submit" name="addInput" value="Submit" />
+		<table id="assetEntryTable" name="assetEntry" border="1" >
 			<tr>
 				<th>Sr.No.</th>
 				<th>Item Description</th>
@@ -79,10 +128,12 @@
 				<th>Make</th>
 			</tr>
 			<tr>
-				<td><input type="text" name="srno[]"></td>
-				<td><input type="text" name="itemDescr[]"></td>
-				<td><input type="number" name="qty[]"></td>
-				<td><input type="text" name="make[]"></td>
+				
+					<td><input type="text" name="srno[]"></td>
+					<td><input type="text" name="itemDescr[]"></td>
+					<td><input type="number" name="qty[]"></td>
+					<td><input type="text" name="make[]"></td>
+				
 			</tr>
 		<?php 
  		 $dbhost = "localhost";
@@ -112,13 +163,14 @@
 	}
 ?>
  			</table>
- 		</form> 
- 		<input class="btn" id="btn3" type="button" name="addRow" value="Add Row" onclick="addRow('assetEntryTable')" style="margin-left: 400px; margin-top:5px;"/>	
-
+ 		</form>
+  		<input class="btn" id="btn3" type="button" name="addRow" value="Add Row" onclick="addRow('assetEntryTable')" style="background-color: #ccaa66;"/>	
+  		</div>
+ 		<div id="form2">
+ 		<form id="assetTransfer" name="assetViewer" action="" method="POST">
+ 		<b align="center">View/Transfer User Asset</b>
  		<br>
  		<br>
- 		<form id="assetTransfer" name="assetViewer" action="adminAsset.php" method="POST" style="margin-left:400px;margin-right: 220px; ">
- 		<b  style="margin-left:280px;">View/Transfer User Asset</b>
  		<div class="input-group">
 			<label >From User:</label>
 			<select name="userNum" id="userSelector2" required>
@@ -150,9 +202,9 @@
 				<option value="10">User 10</option>
 			</select>
 		</div>
-		<input class="btn" id="btn5" type="submit" name="viewUserAsset" value="View" style="width:80px;margin-top:5px;"/>
-		<input class="btn" id="btn6" type="submit" name="transferUserAsset" value="Transfer" style="width:80px;margin-top:5px;"/>
-		<table id="assetViewerTable" name="assetView" border="1" form="assetViewer" style="width:715px;">
+		<input class="btn" id="btn5" type="submit" name="viewUserAsset" value="View"/>
+		<input class="btn" id="btn6" type="submit" name="transferUserAsset" value="Transfer"/>
+		<table id="assetViewerTable" name="assetView" border="1" form="assetViewer">
 			<tr>
 				<th>Mark</th>
 				<th>Sr.No.</th>
@@ -210,14 +262,14 @@
     mysqli_close($conn);
 ?>
  			</table>
- 			
  		</form>
-
+ 	</div>
+ 		<div id="form3">
+ 		<form id="transferRequest" name="processTransferRequest" action="" method="POST">
+ 		<b>Transfer Request</b>
  		<br>
  		<br>
- 		<form id="assetTransfer" name="assetViewer" action="adminAsset.php" method="POST" style="margin-left:400px;margin-right: 220px; ">
- 		<b  style="margin-left:280px;">Transfer Request</b>
-		<table id="assetViewerTable" name="assetView" border="1" form="assetViewer" style="width:715px;">
+		<table id="assetViewerTable" name="assetView" border="1" form="assetViewer">
 			<tr>
 				<th>Mark</th>
 				<th>Sr.No.</th>
@@ -233,7 +285,6 @@
  $dbpass = "";
  $db = "assetmanager";
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
-		 if(isset($_POST["viewRequest"])){ 
 	        $q="SELECT * FROM requeststatus WHERE Approved=0";
 	        $result = mysqli_query($conn, $q);
 	        if (mysqli_num_rows($result) > 0) 
@@ -254,7 +305,6 @@
 				}
 			 } else 
 			 {}
-		}
 		//APPROVE BUTTON
 		if(isset($_POST['approveRequest']))
 		{	
@@ -266,6 +316,8 @@
 				$del_id = $checkbox[$i];
 				$sql = "UPDATE userassets SET UserNo= (Select userTo from requeststatus WHERE SerialNo='$del_id') where SerialNo='$del_id' ";
 				$result = mysqli_query($conn,$sql);
+				$q = "DELETE FROM requeststatus WHERE SerialNo='$del_id'";
+				$result = mysqli_query($conn,$q);
 			}	
 		
 		}
@@ -284,10 +336,11 @@
     mysqli_close($conn);
 ?>
  			</table>
- 			<input class="btn" id="btn8" type="submit" name="viewRequest" value="View" style="width:80px;margin-top:5px;"/>
- 			<input class="btn" id="btn9" type="submit" name="approveRequest" value="Approve" style="width:80px;margin-top:5px;"/>
- 			<input class="btn" id="btn10" type="submit" name="rejectRequest" value="Reject" style="width:80px;margin-top:5px;"/>
- 		</form>
-
+ 			<input class="btn" id="btn8" type="submit" name="approveRequest" value="Approve"/>
+ 			<input class="btn" id="btn9" type="submit" name="rejectRequest" value="Reject"/>
+ 		 </form>
+ 		</div>
+ 		</article>
+ 	    </div>
  	</body>
 </html>
